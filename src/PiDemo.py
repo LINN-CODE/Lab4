@@ -2,7 +2,7 @@
 import socket
 import time
 from time import sleep
-
+import RPi.GPIO as GPIO #import RPi.GPIO module
 
 # Local imports
 
