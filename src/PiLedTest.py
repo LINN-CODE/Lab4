@@ -49,16 +49,21 @@ def blink_led(delay):
 
 def main():
     #blink_led(1)
+    y = 1
     while True:
         x = read_slide_switch()
         print(x)
         if x==1:
             blink_led(0.2)
+            y = 1
             
-        elif x ==0:
-            blink_led(0.1)
+        elif x ==0 and y%2 == 1:
+            start_time = time.time()
+            while time.time() - start_time < 5:
+                blink_led(0.1)
+            y = 2
         
     
 ## Main entry point
-if _name_ == "_main_":
-    main()
+if __name__ == "__main__":
+    main()
